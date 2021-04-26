@@ -1,0 +1,33 @@
+<!-- Name: Alfredo Hernandez
+Class: CST 205
+Date: 4/11/2021
+Description: Displays title, author, image mode, format, width, and height.  -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CST 205 Homework 4</title>
+    {{ bootstrap.load_css() }}
+</head>
+<body>
+
+    <div class="p-5">
+
+        <h3>{{title}} by {{author}}</h3>
+        
+        <img
+        src="/static/images/{{id}}.jpg"
+        class="rounded img_fluid"
+        alt="{{tags}}"
+        > <br><br>
+
+        <label>{{image_mode}} image in {{format}} format with width {{width}} and height {{height}}.</label> <br><br>
+
+        <a href="{{url_for('homepage')}}">Back to list of images</a>
+
+    </div>
+</body>
+</html>

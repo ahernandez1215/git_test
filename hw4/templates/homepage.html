@@ -1,0 +1,32 @@
+<!-- Name: Alfredo Hernandez
+Class: CST 205
+Date: 4/11/2021
+Description: Displays homepage. Contains 3 random images along with their title -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CST 205 Homework 4</title>
+    {{ bootstrap.load_css() }}
+</head>
+<body>
+    <div class="p-5">
+        <h2 > CST 205 Random Picture Gallery </h2>
+
+        {% for i in images %}
+        <a href="{{ url_for('pic', id = i['id']) }}">{{i['title']}}</a><br>
+        <img
+        src="/static/images/{{i['id']}}.jpg"
+        width="250"
+        class="img-fluid rounded"
+        alt="{{ i['tags'] }}"
+        >
+        <br><br>
+        {% endfor %}
+    </div>
+    
+</body>
+</html>
